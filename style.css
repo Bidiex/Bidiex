@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Host Grotesk;
 }
 
 :root {
@@ -211,8 +211,9 @@ button {
 }
 
 .hero-img {
-  height: 200px;
+  height: 600px;
   width: 100%;
+  background: darkblue;
   opacity: 0.3;
 }
 
@@ -306,10 +307,18 @@ button {
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
   border-bottom: 1px solid hsl(from var(--border-color)h s calc(l + 15));
+
+  opacity: 0;
+  transform: translateY(20px) scale(0.95); 
+}
+
+.benefit__card.show{
+  opacity: 1;
+  transform: translateY(0) scale(1); 
 }
 
 .benefit__card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px); 
   box-shadow: 0 0 8px var(--secondary-color);
 }
 
@@ -373,6 +382,14 @@ button {
   background: linear-gradient(to bottom, var(--secondary-background-color) 85%, var(--tertiary-background-color));
   border: 1px solid var(--border-color);
   border-bottom: 1px solid hsl(from var(--border-color)h s calc(l + 15));
+
+  opacity: 0;
+  transform: translateY(-20px) scale(0.95); 
+}
+
+.service-card.show{ 
+  opacity: 1;
+  transform: translateY(0) scale(1); 
 }
 
 .service-card:hover{
