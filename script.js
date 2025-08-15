@@ -20,10 +20,25 @@ menuBtn.addEventListener("click", () => {
   menuBtn.classList.add('oculto');
 });
 
-closeBtn.addEventListener("click", () => {
+closeBtn.addEventListener("click", () => { 
 
   navBarContent.classList.add('oculto');
   closeBtn.classList.add('oculto');
-  menuBtn.classList.remove('oculto');
+  menuBtn.classList.remove('oculto'); 
 });
+
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");  
+      observer.unobserve(entry.target);
+    }
+  });
+},{
+  threshold: 0.15
+});
+
+const benefitCards =  document.querySelectorAll('.benefit__card, .service-card');
+benefitCards.forEach(el => observer.observe(el));
 
