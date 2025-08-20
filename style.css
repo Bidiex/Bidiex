@@ -194,8 +194,8 @@ button {
   overflow-x: hidden;
 }
 
-.glows{
-  position: absolute; 
+.glows {
+  position: absolute;
   overflow: hidden;
   height: 1000px;
   width: 100%;
@@ -205,31 +205,43 @@ button {
 .hero-glow {
   width: 500px;
   height: 500px;
-  background: linear-gradient(hsl(from var(--primary-color)h s calc(l + 20)),
+  background: linear-gradient(hsl(from var(--primary-color)h s calc(l + 5)),
       var(--primary-color),
       hsl(from var(--primary-color)h s calc(l - 5)),
-      rgb(76, 168, 255));
+      rgb(76, 168, 255),
+      transparent);
   border-radius: 50%;
-  filter: blur(5rem);
+  filter: blur(6rem);
   opacity: 0.4;
   position: absolute;
   top: 0%;
   left: -90%;
+  transform: translateY(150px);
+  animation: show 1s ease-out forwards;
 }
 
 .hero-glow2 {
   width: 500px;
   height: 500px;
-  background: linear-gradient(hsl(from var(--primary-color)h s calc(l + 20)),
+  background: linear-gradient(hsl(from var(--primary-color)h s calc(l + 5)),
       var(--primary-color),
       hsl(from var(--primary-color)h s calc(l - 5)),
-      rgb(76, 168, 255));
+      rgb(76, 168, 255),
+      transparent);
   border-radius: 50%;
-  filter: blur(5rem);
+  filter: blur(6rem);
   opacity: 0.3;
   position: absolute;
   top: 15%;
   right: -80%;
+  transform: translateY(200px);
+  animation: show 1s ease-out forwards;
+}
+
+@keyframes show {
+  to {
+    transform: translateY(0);
+  }
 }
 
 .hero-content {
@@ -263,7 +275,13 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.hero-content__btns>* {
+  width: 90%;
 }
 
 .hero-content p {
@@ -285,7 +303,6 @@ button {
 .a-contact-btn,
 .contact-btn {
   border-bottom: hsl(from var(--primary-color) h s calc(l + 15));
-  ;
   font-size: 1rem;
   padding: 0.5rem 2rem;
   border-radius: 6px;
@@ -446,11 +463,11 @@ button {
   box-shadow: 0 0 8px var(--secondary-color);
 }
 
-.cta-section{
+.cta-section {
   gap: 1.2rem;
 }
 
-.cta-section p{
+.cta-section p {
   color: var(--paragraph-color);
 }
 
@@ -601,6 +618,10 @@ button {
   .hero-content__btns {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .hero-content__btns>* {
+    width: auto;
   }
 
   .benefits-cards-container {
