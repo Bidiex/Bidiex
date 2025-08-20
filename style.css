@@ -30,6 +30,7 @@
 
 body {
   background: linear-gradient(to bottom, var(--primary-background-color), hsl(from var(--secondary-background-color)h s calc(l + 3)));
+  position: relative;
 }
 
 a {
@@ -45,7 +46,7 @@ button {
   position: fixed;
   height: 65px;
   z-index: 50;
-  background: var(--primary-background-color);
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,8 +54,9 @@ button {
   transition: all 0.2s ease;
 }
 
-#navbar__menu-btn.scrolled, #navbar__close-btn.scrolled{
-  color: var(--paragraph-color);
+.wrapper-navbar.scrolled {
+  background: var(--secondary-background-color);
+  box-shadow: 0 0 8px black;
 }
 
 .navbar {
@@ -70,7 +72,7 @@ button {
   align-items: center;
 }
 
-.navbar__brand img{
+.navbar__brand img {
   width: 100px;
 }
 
@@ -143,7 +145,7 @@ button {
 }
 
 .navbar__contact-btn {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: hsl(from var(--primary-color) h s calc(l + 10));
   font-size: 1rem;
   padding: 0.5rem 2rem;
   border-radius: 6px;
@@ -158,10 +160,12 @@ button {
 .navbar__contact-btn:hover,
 .contact-btn:hover,
 .a-btn:hover,
+.a-contact-btn:hover,
 .design-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 4px var(--secondary-color);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: hsl(from var(--primary-color) h s calc(l + 10));
+  ;
 }
 
 .page {
@@ -186,7 +190,47 @@ button {
   align-items: center;
   text-align: center;
 
-  padding: 3rem 0 2rem 0;
+  padding: 6rem 0 2rem 0;
+  overflow-x: hidden;
+}
+
+.glows{
+  position: absolute; 
+  overflow: hidden;
+  height: 1000px;
+  width: 100%;
+}
+
+.hero-glow {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(hsl(from var(--primary-color)h s calc(l + 20)),
+      var(--primary-color),
+      hsl(from var(--primary-color)h s calc(l - 5)),
+      rgb(76, 168, 255));
+  border-radius: 50%;
+  filter: blur(5rem);
+  opacity: 0.3;
+  position: absolute;
+  top: 0%;
+  left: -80%;
+  z-index: -1;
+}
+
+.hero-glow2 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(hsl(from var(--primary-color)h s calc(l + 20)),
+      var(--primary-color),
+      hsl(from var(--primary-color)h s calc(l - 5)),
+      rgb(76, 168, 255));
+  border-radius: 50%;
+  filter: blur(5rem);
+  opacity: 0.2;
+  position: absolute;
+  top: 10%;
+  right: -80%;
+  z-index: -1;
 }
 
 .hero-content {
@@ -213,7 +257,6 @@ button {
 .hero-img {
   height: 600px;
   width: 100%;
-  background: darkblue;
   opacity: 0.3;
 }
 
@@ -224,7 +267,7 @@ button {
   gap: 0.5rem;
 }
 
-.hero-content p{
+.hero-content p {
   color: var(--paragraph-color);
 }
 
@@ -240,8 +283,10 @@ button {
   text-align: center;
 }
 
+.a-contact-btn,
 .contact-btn {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: hsl(from var(--primary-color) h s calc(l + 15));
+  ;
   font-size: 1rem;
   padding: 0.5rem 2rem;
   border-radius: 6px;
@@ -251,6 +296,7 @@ button {
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 0 12px var(--secondary-color);
+  text-align: center;
 }
 
 .ri-whatsapp-line {
@@ -285,7 +331,7 @@ button {
   color: var(--paragraph-color);
 }
 
-.benefits-section{
+.benefits-section {
   border-bottom: 1px solid hsl(from var(--secondary-background-color)h s calc(l + 10));
 }
 
@@ -309,16 +355,16 @@ button {
   border-bottom: 1px solid hsl(from var(--border-color)h s calc(l + 15));
 
   opacity: 0;
-  transform: translateY(20px) scale(0.95); 
+  transform: translateY(20px) scale(0.95);
 }
 
-.benefit__card.show{
+.benefit__card.show {
   opacity: 1;
-  transform: translateY(0) scale(1); 
+  transform: translateY(0) scale(1);
 }
 
 .benefit__card:hover {
-  transform: translateY(-3px); 
+  transform: translateY(-3px);
   box-shadow: 0 0 8px var(--secondary-color);
 }
 
@@ -354,7 +400,7 @@ button {
 
 .benefit__card--time,
 .benefit__card--share,
-.benefit__card--awesome{
+.benefit__card--awesome {
   color: var(--paragraph-color);
   background: linear-gradient(to bottom, var(--secondary-background-color) 85%, var(--tertiary-background-color));
 }
@@ -365,13 +411,13 @@ button {
   color: var(--tertiary-color);
 }
 
-.services-container{
+.services-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.service-card{
+.service-card {
   color: var(--paragraph-color);
   border-radius: 6px;
   padding: 1.5rem;
@@ -384,15 +430,19 @@ button {
   border-bottom: 1px solid hsl(from var(--border-color)h s calc(l + 15));
 
   opacity: 0;
-  transform: translateY(-20px) scale(0.95); 
+  transform: translateY(-20px) scale(0.95);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.service-card.show{ 
+.service-card.show {
   opacity: 1;
-  transform: translateY(0) scale(1); 
+  transform: translateY(0) scale(1);
 }
 
-.service-card:hover{
+.service-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 8px var(--secondary-color);
 }
@@ -415,7 +465,7 @@ button {
   gap: 1.5rem;
 }
 
-.footer__brand img{
+.footer__brand img {
   width: 80px;
 }
 
@@ -424,7 +474,7 @@ button {
   gap: 4rem;
 }
 
-.footer__content h3{
+.footer__content h3 {
   color: var(--paragraph-color);
 }
 
@@ -476,15 +526,6 @@ button {
 
 @media (width >=1026px) {
 
-  .wrapper-navbar{
-    background: var(--secondary-background-color);
-  }
-
-  .wrapper-navbar.scrolled {
-    background: var(--primary-background-color);
-    box-shadow: none;
-  }
-
   .navbar {
     padding: 0 2rem;
   }
@@ -511,7 +552,7 @@ button {
     font-size: 1rem;
   }
 
-  .navbar__link a{
+  .navbar__link a {
     font-weight: 500;
   }
 
@@ -524,15 +565,33 @@ button {
     display: none;
   }
 
+  .hero-glow {
+    width: 800px;
+    height: 800px;
+    top: -25%;
+    left: -35%;
+  }
+
+  .hero-glow2 {
+    width: 800px;
+    height: 800px;
+    top: -15%;
+    right: -20%;
+  }
+
   .hero-content {
     align-items: center;
     gap: 0.8rem;
   }
 
   .hero-content__title--span {
-      background: linear-gradient(270deg, hsl(from var(--primary-color)h s calc(l + 20)), var(--primary-color), hsl(from var(--primary-color)h s calc(l - 10)));
+    background: linear-gradient(270deg, hsl(from var(--primary-color)h s calc(l + 20)), var(--primary-color), hsl(from var(--primary-color)h s calc(l - 10)));
     background-clip: text;
     color: transparent;
+  }
+
+  .a-contact-btn {
+    width: 200px;
   }
 
   .hero-content__btns {
@@ -553,7 +612,7 @@ button {
     margin-bottom: 2rem;
   }
 
-  .services-container{
+  .services-container {
     flex-direction: row;
   }
 
