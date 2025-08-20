@@ -216,7 +216,7 @@ button {
   position: absolute;
   top: 0%;
   left: -90%;
-  transform: translateY(150px);
+  transform: translatex(-150px);
   animation: show 1s ease-out forwards;
 }
 
@@ -234,13 +234,13 @@ button {
   position: absolute;
   top: 15%;
   right: -80%;
-  transform: translateY(200px);
+  transform: translatex(200px);
   animation: show 1s ease-out forwards;
 }
 
 @keyframes show {
   to {
-    transform: translateY(0);
+    transform: translatex(0);
   }
 }
 
