@@ -210,10 +210,10 @@ button {
       rgb(76, 168, 255));
   border-radius: 50%;
   filter: blur(5rem);
-  opacity: 0.3;
+  opacity: 0.4;
   position: absolute;
   top: 0%;
-  left: -80%;
+  left: -90%;
   z-index: -1;
 }
 
@@ -226,9 +226,9 @@ button {
       rgb(76, 168, 255));
   border-radius: 50%;
   filter: blur(5rem);
-  opacity: 0.2;
+  opacity: 0.3;
   position: absolute;
-  top: 10%;
+  top: 15%;
   right: -80%;
   z-index: -1;
 }
@@ -569,14 +569,14 @@ button {
     width: 800px;
     height: 800px;
     top: -25%;
-    left: -35%;
+    left: -25%;
   }
 
   .hero-glow2 {
     width: 800px;
     height: 800px;
     top: -15%;
-    right: -20%;
+    right: -15%;
   }
 
   .hero-content {
