@@ -253,7 +253,7 @@ button {
 }
 
 .hero-content__title {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   line-height: 2.8rem;
   text-align: center;
   width: 100%;
@@ -428,8 +428,8 @@ button {
 }
 
 .services-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -465,6 +465,16 @@ button {
 
 .cta-section {
   gap: 1.2rem;
+}
+
+.cta-section .section__title {
+  font-size: 1.9rem;
+  background: linear-gradient(to top right,
+      hsl(from var(--primary-color)h s calc(l + 20)) 25%,
+      var(--primary-color) 80%,
+      hsl(from var(--primary-color)h s calc(l - 5)));
+  background-clip: text;
+  color: transparent;
 }
 
 .cta-section p {
@@ -609,6 +619,7 @@ button {
     background: linear-gradient(270deg, hsl(from var(--primary-color)h s calc(l + 20)), var(--primary-color), hsl(from var(--primary-color)h s calc(l - 10)));
     background-clip: text;
     color: transparent;
+    font-size: 2.8rem;
   }
 
   .a-contact-btn {
@@ -638,7 +649,16 @@ button {
   }
 
   .services-container {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cta-section .section__title {
+    background: linear-gradient(270deg,
+        hsl(from var(--primary-color)h s calc(l + 20)) 25%,
+        var(--primary-color) 80%,
+        hsl(from var(--primary-color)h s calc(l - 5)));
+    background-clip: text;
+    color: transparent;
   }
 
   .footer__content {
