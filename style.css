@@ -465,6 +465,14 @@ button {
 
 .cta-section {
   gap: 1.2rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+}
+
+.cta-section.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .cta-section .section__title {
