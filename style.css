@@ -496,10 +496,11 @@ button {
 }
 
 .footer {
+  border-top: 1px solid hsl(from var(--secondary-background-color)h s calc(l + 10));
   padding-top: 2rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
-  
 }
 
 .footet-container {
@@ -692,7 +693,6 @@ button {
   }
 
   .footer p {
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
     text-align: center;
     width: 100%;
   }
