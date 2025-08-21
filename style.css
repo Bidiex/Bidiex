@@ -102,6 +102,10 @@ button {
   background: var(--primary-background-color);
 }
 
+.navbar__close-btn{
+  text-align: right;
+}
+
 .navbar-content {
   display: flex;
   flex-direction: column;
@@ -465,6 +469,7 @@ button {
 }
 
 .cta-section {
+  padding-block: 2.5rem;
   gap: 1.2rem;
   transition: all 0.3s ease;
   opacity: 0;
@@ -491,9 +496,10 @@ button {
 }
 
 .footer {
+  padding-top: 2rem;
   display: flex;
   justify-content: center;
-
+  
 }
 
 .footet-container {
