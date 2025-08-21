@@ -39,7 +39,7 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.15
 });
 
-const benefitCards =  document.querySelectorAll('.benefit__card, .service-card');
+const benefitCards =  document.querySelectorAll('.benefit__card, .service-card, .cta-section');
 benefitCards.forEach(el => observer.observe(el));
 
 const navbarWrapper = document.querySelector('.wrapper-navbar');
@@ -71,4 +71,3 @@ window.addEventListener('scroll', () => {
     }
   }
 });
-//this is a coment
