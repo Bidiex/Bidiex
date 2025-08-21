@@ -81,8 +81,7 @@ button {
 }
 
 .navbar__toggle {
-  background: var(--secondary-color);
-  width: 35px;
+  width: 55px;
   height: 35px;
   border-radius: 6px;
   display: flex;
@@ -93,12 +92,14 @@ button {
 }
 
 .navbar__toggle button {
-  width: 35px;
+  width: 55px;
   height: 35px;
+  border-radius: 6px;
   background: none;
-  color: var(--tertiary-color);
+  color: var(--paragraph-color);
   cursor: pointer;
   transition: all 0.3s ease;
+  background: var(--primary-background-color);
 }
 
 .navbar-content {
