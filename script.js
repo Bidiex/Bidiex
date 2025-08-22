@@ -1,7 +1,7 @@
 const menuBtn = document.getElementById('navbar__menu-btn');
 const closeBtn = document.getElementById('navbar__close-btn');
 const navBarContent = document.getElementById('navbar-content');
-const navBarLinks = document.querySelectorAll('.navbar__link a');
+const navBarLinks = document.querySelectorAll('.navbar__link a:not(.dropdown-toggle)')
 const invioLogo = document.getElementById('invio-logo');
 const invioLogoBlanco = document.getElementById('invio-logo--blanco');
 
@@ -70,4 +70,16 @@ window.addEventListener('scroll', () => {
       invioLogoBlanco.classList.add('oculto');
     }
   }
+});
+
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(drop => {
+  drop.addEventListener('click', (e) => {
+    const isDesktop = window.innerWidth >= 1026;
+    if(!isDesktop){
+      e.preventDefault();
+      drop.classList.toggle('open');
+    }
+  });
 });
