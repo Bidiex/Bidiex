@@ -36,7 +36,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 },{
-  threshold: 0.15
+  threshold: 0.45
 });
 
 const benefitCards =  document.querySelectorAll('.cta-section, .step');
