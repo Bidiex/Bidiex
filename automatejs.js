@@ -39,7 +39,7 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.15
 });
 
-const benefitCards =  document.querySelectorAll('.benefit__card, .service-card, .cta-section');
+const benefitCards =  document.querySelectorAll('.cta-section, .step');
 benefitCards.forEach(el => observer.observe(el));
 
 const navbarWrapper = document.querySelector('.wrapper-navbar');
