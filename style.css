@@ -458,6 +458,21 @@ button {
   justify-content: space-between;
 }
 
+.service-card--n8n .a-contact-btn{
+  background: linear-gradient(to bottom, #7affa6, #ceffde);
+  box-shadow: 0 0 8px #7affa6;
+}
+
+.service-card--ai .a-contact-btn{
+  background: linear-gradient(to bottom, #ff7b43, #ffceb9);
+  box-shadow: 0 0 8px #ff7b43;
+}
+
+.service-card--website .a-contact-btn{
+  background: linear-gradient(to bottom, #8250ff, #ded2ff);
+  box-shadow: 0 0 8px #8250ff;
+}
+
 .service-card.show {
   opacity: 1;
   transform: translateY(0) scale(1);
