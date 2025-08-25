@@ -35,7 +35,6 @@ body {
 
 a {
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -140,7 +139,6 @@ button {
   height: 100%;
   list-style: none;
   text-align: left;
-
 }
 
 .navbar__link a {
@@ -148,6 +146,7 @@ button {
   color: var(--paragraph-color);
   font-weight: bold;
   transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .navbar__link a:hover {
