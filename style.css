@@ -35,6 +35,7 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -129,16 +130,21 @@ button {
 }
 
 .navbar__link {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
   padding-left: 1rem;
   font-size: 1.3rem;
   width: 100%;
+  height: 100%;
   list-style: none;
-  display: inline-block;
   text-align: left;
+
 }
 
 .navbar__link a {
-  display: block;
+  text-align: left;
   color: var(--paragraph-color);
   font-weight: bold;
   transition: all 0.2s ease;
